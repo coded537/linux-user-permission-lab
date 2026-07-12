@@ -1,0 +1,92 @@
+# ======================================
+# Linux User and Group Permission Lab
+# Commands Used
+# ======================================
+
+# Create Groups
+sudo groupadd developers
+sudo groupadd security
+sudo groupadd HR
+
+# Create Users
+sudo adduser alice
+sudo adduser bob
+sudo adduser charlie
+
+# Add Users to Their Groups
+sudo usermod -aG developers alice
+sudo usermod -aG security bob
+sudo usermod -aG HR charlie
+
+# Verify User Groups
+id alice
+id bob
+id charlie
+
+groups alice
+groups bob
+groups charlie
+
+# Create Department Directories
+mkdir Developers
+mkdir security
+mkdir HR
+
+# Change Group Ownership
+sudo chgrp developers Developers
+sudo chgrp security security
+sudo chgrp HR HR
+
+# Verify Ownership
+ls -la
+
+# Remove Permissions for Others
+chmod o-r Developers
+chmod o-x Developers
+
+chmod o-r security
+chmod o-x security
+
+chmod o-r HR
+chmod o-x HR
+
+# (Equivalent Shortcut)
+# chmod o-rx Developers
+# chmod o-rx security
+# chmod o-rx HR
+
+# Switch Between Users
+su alice
+su bob
+su charlie
+
+# Check Current User
+whoami
+
+# Check Current Directory
+pwd
+
+# List Files
+ls
+
+# Long Listing
+ls -l
+
+# Show Directory Permissions
+ls -ld Developers
+ls -ld security
+ls -ld HR
+
+# Navigate Directories
+cd Developers
+cd security
+cd HR
+
+# Return to Home Directory
+cd
+
+# Return to Previous Directory
+cd ..
+
+# Exit User Session
+exit
